@@ -9,6 +9,7 @@ Hello Everyone, This is an Instagram Scrapper that is capable to Login-Logout, S
 - No. of Following
 - Verification status
 - Public and Private status
+  
 It is also capable to extract following data related of post of a User - 
 - Post Url
 - Caption
