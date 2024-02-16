@@ -26,7 +26,7 @@ If There is any problem in the code Please let me know.
 ```python
 #To Start WebDriver
 
-wdinit(obs=1)
+driver = wdinit(obs=1)
 
 0 --> Headless Mode
 1 --> Window Mode
@@ -42,12 +42,19 @@ login(driver, Username, Password)
 ```python
 #To get information of profile
 
-info(driver, profilelist noofpost)
+profile dataframe, post dataframe = info(driver, profilelist, no of post, disired date)
 
-profilelist --> It is a list of users
-noofpost --> No of post in integer to extract data
+e.g-
+profile_df, post_df = info(driver, profilelist, None, 'Jan 01, 2024')
+                  or
+profile_df, post_df = info(driver, profilelist, 10, None)
+
+profilelist --> It is a list of users or profiles
+no of post --> How many posts data you want to extract, By default it is None
+disired date --> If you want to extract posts from any date, By default it is None
 
 Function will return two dataframe (Profile and Post).
+Note-Date should be in format of 'mmm dd, yyyy'
 ```
 ```python
 #To Logout
@@ -61,8 +68,12 @@ wdclose(driver)
 ```
 ```python
 #To Save in Excel File
+save_to_excel(directory, profile dataframe, post dataframe, excel name)
 
-save_to_excel(directory, profile_dataframe, post_dataframe)
+e.g-
+
+directory = r"location"
+save_to_excel(directory, profile_df, post_df, 'data')
 
 directory --> Location Where you want to save Excel File, 
 ```
@@ -74,6 +85,7 @@ directory --> Location Where you want to save Excel File,
 - Selenium
 - Pandas 
 - Openpyxl
+- datetime
 
 
 # Hi, I'm Chetan Sharma! 👋
